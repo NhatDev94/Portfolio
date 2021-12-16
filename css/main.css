@@ -272,8 +272,20 @@ ul {
     margin-bottom: 50px;
 }
 
+#portfolio .list-project .item .overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
 #portfolio .list-project .item img {
     width: 100%;
+    transition: all 0.3s;
 }
 
 #portfolio .list-project .item .tag {
@@ -284,6 +296,8 @@ ul {
     left: 50%;
     transform: translate(-50%, -50%);
     justify-content: center;
+    display: none;
+    opacity: 0;
 } 
 
 #portfolio .list-project .item span {
@@ -291,16 +305,38 @@ ul {
     background: rgba(0, 0, 0, 0.9);
     color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
-    padding: 5px 10px;
+    padding: 4px 8px;
     border-radius: 3px;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 600;
     margin: 5px;
 }
 
+#portfolio .list-project .item span:hover {
+    cursor: pointer;
+    color: white;
+}
+
 #portfolio .list-project .item .more {
+    /* display: none; */
+    opacity: 0;
     position: absolute;
     bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 90;
+}
+
+
+#portfolio .list-project .item:hover .overlay {
+    display: block;
+}
+
+#portfolio .list-project .item:hover .more {
+    display: block;
+    opacity: 1;
+}
+
+@keyframes showTag {
+
 }
