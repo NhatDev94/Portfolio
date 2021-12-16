@@ -5,6 +5,10 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+.hide {
+    display: none !important;
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -19,14 +23,18 @@ ul {
 }
 
 .contain {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background: silver;
 }
 
 .nav {
+    position: fixed;
     width: 25%;
+    height: 100%;
     background: white;
+    top: 0;
+    left: 0;
 }
 
 .nav-content {
@@ -41,7 +49,8 @@ ul {
 }
 
 .nav ul li {
-    margin: 25px 0;
+    margin: 20px 0;
+    padding: 5px 0;
     color: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
@@ -71,18 +80,35 @@ ul {
     width: 75%;
     height: 100%;
     background: #f8f8f8;
+    padding: 0 60px;
+    position: relative;
+    top: 0;
+    left: 25%;
 }
 
 .main .main-item {
     align-items: center;
     width: 100%;
     justify-content: center;
+    position: relative;
+    left: -20px;
+    animation: showMainContent 1s forwards;
+}
+
+@keyframes showMainContent {
+    from {
+        opacity: 0;
+        left: -60px;
+    }
+    to {
+        opacity: 1;
+        left: 0;
+    }
 }
 
 .main-item .avatar {
-    width: 200px;
-    height: 200px;
-    background: silver;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     overflow: hidden;
     margin-right: 80px;
@@ -90,4 +116,191 @@ ul {
 
 .main-item .avatar img {
     width: 100%;
+}
+
+.main-item .details .name {
+    font-size: 48px;
+    padding-bottom: 20px;
+}
+
+.main-item .details .job {
+    font-style: italic;
+    font-style: 16px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.main-item .details .social {
+    color: black;
+}
+
+.main-item .details .social li {
+    margin-right: 20px;
+}
+
+.main-item .details .social li a {
+    width: 100%;
+    height: 100%;
+}
+
+.main-item .details .social i {
+    color: black;
+    font-size: 17px;
+    
+}
+
+.main-item .details .social li:hover i {
+    position: relative;
+    animation: moveTop 0.5s forwards;
+}
+
+@keyframes moveTop {
+    from {
+        top: 0;
+        opacity: 1;
+    }
+    to {
+        top: -10px;
+        opacity: 0.6;
+    }
+}
+
+/* About */
+#about {
+    height: 70%;
+    margin: auto;
+}
+#about .avatar {
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+#about .description {
+    width: 70%;
+    justify-content: center;
+    margin: auto;
+}
+
+#about .description .left {
+    width: 50%;
+}
+
+#about .description .name {
+    font-size:  32px;
+    padding-bottom: 20px;
+}
+
+#about .description .left p {
+    font-size:  17px;
+    font-style: italic;
+    padding-bottom: 20px;
+    opacity: 0.8;
+    padding-right: 100px;
+    line-height: 1.8;
+}
+
+#about .description .right {
+    width: 50%;
+}
+
+#about .description .right ul li {
+    line-height: 1.9;
+    font-style: 17px;
+}
+
+#about .description .right ul li p {
+    min-width: 90px;
+    color: black;
+    font-weight: 600;
+}
+
+#about .description .right ul li span {
+    opacity: 0.8;
+}
+
+/* Portfolio */
+#portfolio {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#portfolio .title {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 15%;
+    margin-bottom: 60px;
+}
+
+#portfolio .title h2 {
+    font-size: 32px;
+}
+
+#portfolio .title .subnav {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#portfolio .title .subnav li {
+    margin-left: 30px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    opacity: 0.6;
+    transition: letter-spacing 0.3s;
+}
+
+#portfolio .title .subnav li:hover {
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+
+#portfolio .title .subnav .active {
+    opacity: 1;
+    letter-spacing: 2px;
+}
+
+#portfolio .list-project {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#portfolio .list-project .item {
+    width: 48%;
+    height: fit-content;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+#portfolio .list-project .item img {
+    width: 100%;
+}
+
+#portfolio .list-project .item .tag {
+    width: 70%;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+} 
+
+#portfolio .list-project .item span {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.9);
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 5px;
+}
+
+#portfolio .list-project .item .more {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
 }
