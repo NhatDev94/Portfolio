@@ -107,8 +107,12 @@ ul {
 }
 
 .main-item .avatar {
-    width: 300px;
-    height: 300px;
+    width: 40%;
+}
+
+.main-item .avatar .img {
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     overflow: hidden;
     margin-right: 80px;
@@ -116,6 +120,10 @@ ul {
 
 .main-item .avatar img {
     width: 100%;
+}
+
+.main-item .details {
+    width: 60%;
 }
 
 .main-item .details .name {
@@ -167,16 +175,16 @@ ul {
 
 /* About */
 #about {
-    height: 70%;
+    height: 80%;
     margin: auto;
 }
 #about .avatar {
     margin: auto;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 #about .description {
-    width: 70%;
+    width: 80%;
     justify-content: center;
     margin: auto;
 }
@@ -195,7 +203,7 @@ ul {
     font-style: italic;
     padding-bottom: 20px;
     opacity: 0.8;
-    padding-right: 100px;
+    padding-right: 80px;
     line-height: 1.8;
 }
 
@@ -272,6 +280,20 @@ ul {
     margin-bottom: 50px;
 }
 
+#portfolio .list-project .item:hover .overlay {
+    display: block;
+} 
+
+#portfolio .list-project .item:hover .tag {
+    opacity: 1;
+    top: 50%;
+} 
+
+#portfolio .list-project .item:hover .page {
+    opacity: 1;
+    bottom: 8%;
+} 
+
 #portfolio .list-project .item .overlay {
     width: 100%;
     height: 100%;
@@ -289,54 +311,52 @@ ul {
 }
 
 #portfolio .list-project .item .tag {
-    width: 70%;
+    width: 80%;
     flex-wrap: wrap;
+    justify-content: center;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    justify-content: center;
-    display: none;
+    z-index: 2;
     opacity: 0;
-} 
+    transition: all 0.3s;
+}
 
-#portfolio .list-project .item span {
-    display: inline-block;
-    background: rgba(0, 0, 0, 0.9);
-    color: rgba(255, 255, 255, 0.6);
-    text-transform: uppercase;
+#portfolio .list-project .item p {
+    width: fit-content;
     padding: 4px 8px;
     border-radius: 3px;
-    font-size: 13px;
-    font-weight: 600;
-    margin: 5px;
-}
-
-#portfolio .list-project .item span:hover {
-    cursor: pointer;
+    background: rgba(0, 0, 0, 0.9);
     color: white;
+    margin: 0 4px 8px;
+    transition: all 0.3s;
 }
 
-#portfolio .list-project .item .more {
-    /* display: none; */
-    opacity: 0;
+#portfolio .list-project .item .page {
     position: absolute;
-    bottom: 10%;
+    bottom: 0%;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 90;
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.3s;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    background: white;
+    color: black;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+#portfolio .list-project .item .page:hover {
+    cursor: pointer;
+}
+
+#portfolio .list-project .item .page span {
+    display: inline-block;
+    padding-right: 6px;
 }
 
 
-#portfolio .list-project .item:hover .overlay {
-    display: block;
-}
-
-#portfolio .list-project .item:hover .more {
-    display: block;
-    opacity: 1;
-}
-
-@keyframes showTag {
-
-}
