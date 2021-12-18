@@ -106,16 +106,18 @@ ul {
     }
 }
 
-.main-item .avatar {
+#home .avatar {
     width: 40%;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.main-item .avatar .img {
+#home .avatar .img {
     width: 220px;
     height: 220px;
     border-radius: 50%;
-    overflow: hidden;
     margin-right: 80px;
+    overflow: hidden;
 }
 
 .main-item .avatar img {
@@ -181,6 +183,14 @@ ul {
 #about .avatar {
     margin: auto;
     margin-bottom: 30px;
+}
+
+#about .avatar .img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
 }
 
 #about .description {
@@ -258,6 +268,7 @@ ul {
 
 #portfolio .title .subnav li:hover {
     cursor: pointer;
+    opacity: 1;
     letter-spacing: 2px;
 }
 
